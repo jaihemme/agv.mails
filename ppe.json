@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "date_derniere_mise_a_jour": "2026-10-02T14:29:28.326384",
+    "nombre_conversations": 2,
+    "nombre_messages": 2
+  },
+  "conversations": [
+    {
+      "sujet": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
+      "sujet_normalise": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
+      "date_debut": "2026-07-20T08:06:36",
+      "date_fin": "2026-07-20T08:06:36",
+      "nombre_messages": 1,
+      "messages": [
+        {
+          "fichier_source": "/Users/yogi/Docker/agv.mails/PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml",
+          "timestamp": "2026-07-20T08:06:36",
+          "message_id": "GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM",
+          "in_reply_to": "11b67a45-8b67-49c9-93e2-115ef06368b3@ik.me",
+          "expediteur_nom": "Margaux Juvet",
+          "expediteur_email": "m.juvet@gerances-giroud.ch",
+          "destinataires": {
+            "to": [
+              {
+                "nom": "Pascal Cipolla",
+                "email": "pascal.cipolla@ik.me"
+              },
+              {
+                "nom": "mariechristine.marfurt@gmail.com",
+                "email": "mariechristine.marfurt@gmail.com"
+              }
+            ],
+            "cc": [
+              {
+                "nom": "Dehline Schwab",
+                "email": "d.schwab@gerances-giroud.ch"
+              },
+              {
+                "nom": "Joel Page",
+                "email": "j.page@gerances-giroud.ch"
+              }
+            ],
+            "bcc": []
+          },
+          "sujet": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
+          "contenu_nettoye": "Bonjour Monsieur Cipolla,\nNous vous remercions pour votre e-mail.\nUn premier rappel a �t� adress� � CMA le 14.07.2026. En l'absence de retour, un deuxi�me rappel leur a �t� envoy� ce jour afin qu'ils traitent notre demande de devis dans les meilleurs d�lais.\nNous reviendrons vers vous d�s r�ception de celui-ci.\nDans l'intervalle, nous restons volontiers � votre disposition pour toute question.\nAvec nos meilleures salutations.\n\n[cid:f41cc2a5-9f1d-437a-ba30-d82287ee4f64]<https://www.gerances-giroud.ch/fr/accueil>\n\nMargaux Juvet\nAssistante admin. technique PPE\nChamp-Francey 14\n\nCase Postale 2143\n1630 Bulle\n026 420 01 83\n\nPr�sente du lundi au vendredi midi",
+          "pieces_jointes": [],
+          "forwarded_message": null
+        }
+      ]
+    },
+    {
+      "sujet": "Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel",
+      "sujet_normalise": "Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel",
+      "date_debut": "2025-11-27T16:16:22",
+      "date_fin": "2025-11-27T16:16:22",
+      "nombre_messages": 1,
+      "messages": [
+        {
+          "fichier_source": "/Users/yogi/Docker/agv.mails/PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml",
+          "timestamp": "2025-11-27T16:16:22",
+          "message_id": "DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com",
+          "in_reply_to": "",
+          "expediteur_nom": "Marika Iacono",
+          "expediteur_email": "m.iacono@toffel-immobilier.ch",
+          "destinataires": {
+            "to": [],
+            "cc": [],
+            "bcc": []
+          },
+          "sujet": "Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel",
+          "contenu_nettoye": "Marika Iacono souhaite rappeler le message « PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel  ».",
+          "pieces_jointes": [],
+          "forwarded_message": null
+        }
+      ]
+    }
+  ]
+}

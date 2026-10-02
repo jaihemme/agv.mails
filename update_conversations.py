@@ -11,7 +11,6 @@ import json
 import logging
 import os
 import re
-import io
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 
@@ -285,8 +284,7 @@ def _clean_body(body: str) -> str:
     lines = body.split('\n')
     cleaned_lines = []
     in_signature = False
-    in_quoted = False
-    
+
     # Common signature separators
     sig_separators = [
         '-- ',
@@ -485,7 +483,7 @@ def parse_email_file(filepath: str) -> Optional[Dict[str, Any]]:
         else:
             payload = msg.get_payload(decode=True)
             if isinstance(payload, bytes):
-                body = payload.decode(msg.get_content_charset(), errors='replace')
+                body = payload.decode(msg.get_content_charset() or 'latin-1', errors='replace')
             elif isinstance(payload, str):
                 body = payload
         
@@ -630,7 +628,7 @@ def merge_message_into_conversations(json_data: Dict[str, Any], new_message: Dic
     
     # If still not found, create new conversation
     if not target_conv:
-        target_conv = {
+        target_conv: Dict[str, Any] = {
             "sujet": sujet,
             "sujet_normalise": normalize_subject(sujet),
             "date_debut": timestamp,
@@ -743,8 +741,8 @@ def main():
     
     # Load existing JSON
     json_data = load_json(args.json_file)
-    initial_message_count = json_data["meta"]["nombre_messages"]
-    initial_conv_count = json_data["meta"]["nombre_conversations"]
+    #initial_message_count = json_data["meta"]["nombre_messages"]
+    #initial_conv_count = json_data["meta"]["nombre_conversations"]
     
     # Collect input files
     input_files = []
@@ -757,7 +755,7 @@ def main():
         for root, _, files in os.walk(args.input):
             for file in files:
                 if file.endswith('.eml'):
-                    input_files.append(os.path.join(root, file))
+                    input_files.append(os.path.join(str(root), str(file)))
     else:
         logging.error(f"Input path does not exist: {args.input}")
         print(f"Error: Input path does not exist: {args.input}")

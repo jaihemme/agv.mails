@@ -1,0 +1,14 @@
+2026-10-02 14:29:28 - INFO - Starting processing with args: Namespace(input='PPE', json_file='ppe.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 14:29:28 - INFO - Creating new JSON structure for: ppe.json
+2026-10-02 14:29:28 - INFO - Found 2 .eml files to process
+2026-10-02 14:29:28 - INFO - Parsing file: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-02 14:29:28 - INFO - Successfully parsed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-02 14:29:28 - INFO - Created new conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
+2026-10-02 14:29:28 - INFO - Added message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM to conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
+2026-10-02 14:29:28 - INFO - Processed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml -> Message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM added successfully
+2026-10-02 14:29:28 - INFO - Parsing file: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-02 14:29:28 - INFO - Successfully parsed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-02 14:29:28 - INFO - Created new conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
+2026-10-02 14:29:28 - INFO - Added message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com to conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
+2026-10-02 14:29:28 - INFO - Processed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com added successfully
+2026-10-02 14:29:28 - INFO - Saved JSON to: ppe.json
