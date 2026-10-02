@@ -48,7 +48,8 @@ def setup_logging(log_file: str, level: str = "info") -> None:
         filename=log_file,
         level=log_level,
         format='%(asctime)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
+        datefmt='%Y-%m-%d %H:%M:%S',
+        force=True
     )
 
 
@@ -180,7 +181,15 @@ def _extract_forwarded_message(email_msg) -> Optional[Dict[str, Any]]:
             if content_type == 'message/rfc822':
                 # This is an embedded message
                 try:
-                    embedded_msg = email.message_from_bytes(part.get_payload(decode=True))
+                    payload = part.get_payload()
+                    if isinstance(payload, list) and len(payload) > 0:
+                        embedded_msg = payload[0]
+                    elif isinstance(payload, email.message.Message):
+                        embedded_msg = payload
+                    else:
+                        raw_payload = part.get_payload(decode=True)
+                        embedded_msg = email.message_from_bytes(raw_payload) if raw_payload else part
+
                     forwarded = {
                         "auteur": embedded_msg.get('From', ''),
                         "date": embedded_msg.get('Date', ''),
@@ -229,7 +238,6 @@ def _extract_forwarded_from_text(body: str) -> Optional[Dict[str, str]]:
         r'-----Forwarded Message-----',
         r'-------- Forwarded message --------',
         r'---\s*Forwarded\s+Message\s*---',
-        r'De\s*:',
         r'De\s*:',
         r'From\s*:',
     ]
@@ -287,6 +295,7 @@ def _clean_body(body: str) -> str:
 
     # Common signature separators
     sig_separators = [
+        '--',
         '-- ',
         '---',
         '_____',
@@ -301,7 +310,7 @@ def _clean_body(body: str) -> str:
         stripped = line.strip()
         
         # Check for signature start
-        if any(stripped.startswith(sep) or stripped == sep for sep in sig_separators):
+        if line.startswith('-- ') or any(stripped.startswith(sep) or stripped == sep for sep in sig_separators):
             in_signature = True
             continue
         
@@ -313,7 +322,9 @@ def _clean_body(body: str) -> str:
             continue
         
         # Check for "Le ... a écrit" patterns (French quoted text indicator)
-        if re.match(r'Le\s+\w+\s+\d+\s+\w+\s+\d+\s+a\s+écrit', stripped, re.IGNORECASE):
+        if re.search(r'Le\s+.*?\s+a\s+écrit', stripped, re.IGNORECASE):
+            continue
+        if re.search(r'On\s+.*?\s+wrote', stripped, re.IGNORECASE):
             continue
         if re.match(r'On\s+\w+\s+\d+\s+\w+\s+\d+\s+a\s+écrit', stripped, re.IGNORECASE):
             continue

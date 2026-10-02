@@ -12,3 +12,60 @@
 2026-10-02 14:29:28 - INFO - Added message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com to conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
 2026-10-02 14:29:28 - INFO - Processed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com added successfully
 2026-10-02 14:29:28 - INFO - Saved JSON to: ppe.json
+2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
+2026-10-02 15:10:57 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/does_not_exist
+2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
+2026-10-02 15:10:57 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
+2026-10-02 15:10:57 - INFO - Found 0 .eml files to process
+2026-10-02 15:10:57 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
+2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/out.json
+2026-10-02 15:10:57 - INFO - Found 1 .eml files to process
+2026-10-02 15:10:57 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml
+2026-10-02 15:10:57 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml
+2026-10-02 15:10:57 - INFO - Created new conversation: T
+2026-10-02 15:10:57 - INFO - Added message id@test.com to conversation: T
+2026-10-02 15:10:57 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml -> Message id@test.com added successfully
+2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
+2026-10-02 15:11:39 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/does_not_exist
+2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
+2026-10-02 15:11:39 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
+2026-10-02 15:11:39 - INFO - Found 0 .eml files to process
+2026-10-02 15:11:39 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
+2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/out.json
+2026-10-02 15:11:39 - INFO - Found 1 .eml files to process
+2026-10-02 15:11:39 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml
+2026-10-02 15:11:39 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml
+2026-10-02 15:11:39 - INFO - Created new conversation: T
+2026-10-02 15:11:39 - INFO - Added message id@test.com to conversation: T
+2026-10-02 15:11:39 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml -> Message id@test.com added successfully
+2026-10-02 15:11:57 - INFO - Starting processing with args: Namespace(input='PPE', json_file='ppe.json', output=None, dry_run=True, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:11:57 - INFO - Loaded existing JSON: ppe.json
+2026-10-02 15:11:57 - INFO - Found 2 .eml files to process
+2026-10-02 15:11:57 - INFO - Parsing file: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-02 15:11:57 - INFO - Successfully parsed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-02 15:11:57 - INFO - Skipped: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml -> Message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM already exists, skipped
+2026-10-02 15:11:57 - INFO - Parsing file: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-02 15:11:57 - INFO - Successfully parsed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-02 15:11:57 - INFO - Skipped: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com already exists, skipped
+2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
+2026-10-02 15:25:43 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/does_not_exist
+2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
+2026-10-02 15:25:43 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
+2026-10-02 15:25:43 - INFO - Found 0 .eml files to process
+2026-10-02 15:25:43 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
+2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
+2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/out.json
+2026-10-02 15:25:43 - INFO - Found 1 .eml files to process
+2026-10-02 15:25:43 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml
+2026-10-02 15:25:43 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml
+2026-10-02 15:25:43 - INFO - Created new conversation: T
+2026-10-02 15:25:43 - INFO - Added message id@test.com to conversation: T
+2026-10-02 15:25:43 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml -> Message id@test.com added successfully
