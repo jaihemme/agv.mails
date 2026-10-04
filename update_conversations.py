@@ -485,9 +485,9 @@ def parse_email_file(filepath: str) -> Optional[Dict[str, Any]]:
             for part in msg.walk():
                 content_type = part.get_content_type()
                 if content_type == 'text/plain':
-                    payload = part.get_payload(decode=True)
+                    payload = part.get_content()
                     if isinstance(payload, bytes):
-                        body += payload.decode('utf-8', errors='replace')
+                        logging.error(f"NE DEVRAIT PAS ARRIVER: in get_content en bytes")
                     elif isinstance(payload, str):
                         body += payload
                     body += '\n'
