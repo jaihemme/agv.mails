@@ -35,6 +35,8 @@ Le script [`update_conversations.py`](file:///Users/yogi/Docker/agv.mails/update
 4. **Détection des transferts & pièces jointes :**
    - Extraction des métadonnées des messages transférés (`FWD:`, `TR:`).
    - Recensement des pièces jointes (nom, type MIME, taille en octets).
+   - Sauvegarde optionnelle des fichiers binaires sur disque via l'option `--attachment-dir`.
+   - Format du fichier sauvegardé : `{date_creation}_{nom_original}` (date au format `aaaammjjHMS`).
 5. **Algorithme de regroupement en conversations :**
    - **Déduplication :** Ignore les messages déjà importés selon leur `message_id`.
    - **Liaison parent-enfant :** Rapproche le message d'une conversation existante via l'identifiant `In-Reply-To`.
@@ -67,6 +69,7 @@ python3 update_conversations.py --input <FICHIER_OU_DOSSIER_EML> --json_file <FI
 | `--dry-run` | *Optionnel* | Mode simulation : traite et affiche le résumé sans enregistrer de modifications. |
 | `--log-level` | *Optionnel* | Niveau de verbosité des logs : `debug`, `info` (défaut), `warning`, `error`. |
 | `--log-file` | *Optionnel* | Fichier de destination des logs (défaut : `update_conversations.log`). |
+| `--attachment-dir` | *Optionnel* | Répertoire de destination pour sauvegarder les fichiers des pièces jointes. |
 
 ### Exemples
 
