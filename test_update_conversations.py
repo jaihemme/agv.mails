@@ -9,6 +9,7 @@ import email.policy
 import json
 import logging
 import os
+import re
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -232,7 +233,12 @@ class TestForwardedAndAttachments:
         msg = email.message_from_bytes(raw_email, policy=email.policy.default)
         assert _extract_forwarded_message(msg) is None
 
-    def test_extract_attachments_from_mime(self):
+    def test_extract_attachments_from_mime(self, tmp_path):
+        # Setup paths
+        attachment_dir = str(tmp_path / "attachments")
+        eml_dir = tmp_path / "emails"
+        eml_dir.mkdir()
+
         raw_email = (
             b"From: sender@example.com\r\n"
             b"To: recipient@example.com\r\n"
@@ -249,13 +255,18 @@ class TestForwardedAndAttachments:
             b"--BOUNDARY--\r\n"
         )
         msg = email.message_from_bytes(raw_email, policy=email.policy.default)
-        attachments = _get_attachments(msg)
+        attachments = _get_attachments(msg, attachment_dir)
         assert len(attachments) == 1
-        assert attachments[0]["nom"] == "facture.pdf"
+        assert re.match(r"^\d{14}_facture\.pdf$", attachments[0]["nom"])
         assert attachments[0]["type"] == "application/pdf"
-        assert int(attachments[0]["taille"]) > 0
+        assert attachments[0]["taille"] == 22
 
-    def test_extract_attachments_fallback_name(self):
+    def test_extract_attachments_fallback_name(self, tmp_path):
+        # Setup paths
+        attachment_dir = str(tmp_path / "attachments")
+        eml_dir = tmp_path / "emails"
+        eml_dir.mkdir()
+
         raw_email = (
             b"From: sender@example.com\r\n"
             b"Subject: Test\r\n"
@@ -268,9 +279,9 @@ class TestForwardedAndAttachments:
             b"--BOUNDARY--\r\n"
         )
         msg = email.message_from_bytes(raw_email, policy=email.policy.default)
-        attachments = _get_attachments(msg)
+        attachments = _get_attachments(msg, attachment_dir)
         assert len(attachments) == 1
-        assert attachments[0]["nom"] == "photo.png"
+        assert re.match(r"^\d{14}_photo\.png$", attachments[0]["nom"])
 
 
 # ============================================================================
@@ -553,6 +564,185 @@ class TestMainCLI:
         assert "Files processed: 1" in captured
         assert "[DRY RUN] No changes were saved" in captured
         assert not json_output.exists()
+
+    def test_main_execution_and_save(self, tmp_path, capsys):
+        eml_path = tmp_path / "email2.eml"
+        eml_path.write_text(
+            "Message-ID: <cli-test-2@test.com>\n"
+            "Date: Mon, 01 Sep 2026 12:00:00 +0200\n"
+            "Subject: Sujet Test Réel\n"
+            "From: sender@test.com\n"
+            "To: recipient@test.com\n\n"
+            "Message body 2",
+            encoding="utf-8",
+        )
+        json_output = tmp_path / "result_saved.json"
+        log_file = tmp_path / "cli.log"
+
+        test_args = [
+            "update_conversations.py",
+            "--input", str(eml_path),
+            "--json_file", str(json_output),
+            "--log-file", str(log_file),
+        ]
+
+        with patch("sys.argv", test_args):
+            main()
+
+        assert json_output.exists()
+        saved = json.loads(json_output.read_text(encoding="utf-8"))
+        assert saved["meta"]["nombre_conversations"] == 1
+        assert saved["meta"]["nombre_messages"] == 1
+        assert saved["conversations"][0]["messages"][0]["message_id"] == "cli-test-2@test.com"
+
+    def test_main_with_invalid_input(self, tmp_path, capsys):
+        # Non-existent input path
+        test_args = [
+            "update_conversations.py",
+            "--input", str(tmp_path / "does_not_exist"),
+            "--json_file", str(tmp_path / "out.json"),
+        ]
+        with patch("sys.argv", test_args):
+            main()
+        captured = capsys.readouterr().out
+        assert "Error: Input path does not exist" in captured
+
+        # Non-eml input file
+        txt_path = tmp_path / "test.txt"
+        txt_path.write_text("not an eml", encoding="utf-8")
+        test_args = [
+            "update_conversations.py",
+            "--input", str(txt_path),
+            "--json_file", str(tmp_path / "out.json"),
+        ]
+        with patch("sys.argv", test_args):
+            main()
+        captured = capsys.readouterr().out
+        assert "Files processed: 0" in captured
+
+    def test_main_save_error(self, tmp_path, capsys):
+        eml_path = tmp_path / "test.eml"
+        eml_path.write_text("Message-ID: <id@test.com>\nSubject: T\n\nBody", encoding="utf-8")
+        test_args = [
+            "update_conversations.py",
+            "--input", str(eml_path),
+            "--json_file", str(tmp_path / "out.json"),
+        ]
+        with patch("sys.argv", test_args), patch("update_conversations.save_json", return_value=False):
+            main()
+        captured = capsys.readouterr().out
+        assert "ERROR: Failed to save JSON" in captured
+
+# ============================================================================
+# 10. Tests de sauvegarde des pièces jointes (Attachment Saving)
+# ============================================================================
+
+class TestAttachmentSaving:
+    def test_save_attachments_success(self, tmp_path):
+        # Setup paths
+        attachment_dir = str(tmp_path / "attachments")
+        eml_dir = tmp_path / "emails"
+        eml_dir.mkdir()
+
+        # Create a mock email with an attachment and a creation-date
+        # Content-Disposition: attachment; filename="test.pdf"; creation-date="Tue, 19 Aug 2025 06:39:49 GMT"
+        raw_email = (
+            b"From: sender@example.com\r\n"
+            b"Subject: Test Save\r\n"
+            b"MIME-Version: 1.0\r\n"
+            b'Content-Type: multipart/mixed; boundary="BOUNDARY"\r\n\r\n'
+            b"--BOUNDARY\r\n"
+            b"Content-Type: text/plain\r\n\r\n"
+            b"Body\r\n"
+            b"--BOUNDARY\r\n"
+            b'Content-Type: application/pdf\r\n'
+            b'Content-Disposition: attachment; filename="test.pdf"; creation-date="Tue, 19 Aug 2025 06:39:49 GMT"\r\n\r\n'
+            b"PDF CONTENT"
+            b"\r\n--BOUNDARY--\r\n"
+        )
+        eml_file = eml_dir / "test.eml"
+        eml_file.write_bytes(raw_email)
+
+        # Execute
+        result = parse_email_file(str(eml_file), attachment_dir=attachment_dir)
+
+        # Verify
+        assert result is not None
+        # Date Tue, 19 Aug 2025 06:39:49 GMT -> 20250819063949
+        expected_filename = "20250819063949_test.pdf"
+        saved_file = tmp_path / "attachments" / expected_filename
+        assert saved_file.exists()
+        assert saved_file.read_bytes() == b"PDF CONTENT"
+
+    def test_save_attachments_fallback_date(self, tmp_path):
+        # Setup paths
+        attachment_dir = str(tmp_path / "attachments")
+        eml_dir = tmp_path / "emails"
+        eml_dir.mkdir()
+
+        # Mock email without creation-date
+        raw_email = (
+            b"From: sender@example.com\r\n"
+            b"Subject: Test Fallback\r\n"
+            b"MIME-Version: 1.0\r\n"
+            b"MIME-Version: 1.0\r\n"
+            b'Content-Type: multipart/mixed; boundary="BOUNDARY"\r\n\r\n'
+            b"--BOUNDARY\r\n"
+            b"Content-Type: text/plain\r\n\r\n"
+            b"Body\r\n"
+            b"--BOUNDARY\r\n"
+            b'Content-Type: application/pdf\r\n'
+            b'Content-Disposition: attachment; filename="fallback.pdf"\r\n\r\n'
+            b"PDF CONTENT"
+            b"\r\n--BOUNDARY--\r\n"
+        )
+        eml_file = eml_dir / "test.eml"
+        eml_file.write_bytes(raw_email)
+
+        # Execute
+        result = parse_email_file(str(eml_file), attachment_dir=attachment_dir)
+
+        # Verify
+        assert result is not None
+        # File should be saved with current date. We check if any file exists in the dir.
+        saved_files = list((tmp_path / "attachments").iterdir())
+        assert len(saved_files) == 1
+        filename = saved_files[0].name
+        assert filename.endswith("_fallback.pdf")
+        # Check that date part is 14 digits (YYYYMMDDHHMMSS)
+        date_part = filename.split('_')[0]
+        assert len(date_part) == 14
+        assert saved_files[0].read_bytes() == b"PDF CONTENT"
+
+    def test_no_save_when_dir_none(self, tmp_path):
+        # Setup paths
+        eml_dir = tmp_path / "emails"
+        eml_dir.mkdir()
+
+        raw_email = (
+            b"From: sender@example.com\r\n"
+            b"Subject: Test No Save\r\n"
+            b"MIME-Version: 1.0\r\n"
+            b'Content-Type: multipart/mixed; boundary="BOUNDARY"\r\n\r\n'
+            b"--BOUNDARY\r\n"
+            b"Content-Type: text/plain\r\n\r\n"
+            b"Body\r\n"
+            b"--BOUNDARY\r\n"
+            b'Content-Type: application/pdf\r\n'
+            b'Content-Disposition: attachment; filename="nosave.pdf"\r\n\r\n'
+            b"PDF CONTENT"
+            b"--BOUNDARY--\r\n"
+        )
+        eml_file = eml_dir / "test.eml"
+        eml_file.write_bytes(raw_email)
+
+        # Execute with attachment_dir=None
+        result = parse_email_file(str(eml_file), attachment_dir=None)
+
+        # Verify
+        assert result is not None
+        # No attachments folder should have been created
+        assert not (tmp_path / "attachments").exists()
 
     def test_main_execution_and_save(self, tmp_path, capsys):
         eml_path = tmp_path / "email2.eml"

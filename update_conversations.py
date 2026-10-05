@@ -347,23 +347,28 @@ def _clean_body(body: str) -> str:
     return cleaned
 
 
-def _get_attachments(email_msg) -> List[Dict[str, str]]:
+def _get_attachments(email_msg, attachment_dir=None) -> List[Dict[str, str]]:
     """
     Extract attachment information from email.
-    
+    If attachment_dir is provided, saves the attachment files to disk.
+
     Args:
         email_msg: Parsed email.message object.
-        
+        attachment_dir: Optional directory to save attachments.
+
     Returns:
         List of attachment dicts with name, content_type, size.
     """
     attachments = []
-    
+
+    if attachment_dir:
+        os.makedirs(attachment_dir, exist_ok=True)
+
     if email_msg.is_multipart():
         for part in email_msg.walk():
             content_disposition = part.get('Content-Disposition', '')
-            content_type = part.get_content_type()
-            
+            content_type = part.get('Content-Type', '')
+
             # Skip multipart containers and text parts
             if part.is_multipart():
                 continue
@@ -372,7 +377,33 @@ def _get_attachments(email_msg) -> List[Dict[str, str]]:
             
             # Check if it's an attachment
             if 'attachment' in content_disposition:
-                filename = part.get_filename()
+
+                # Utilisation d'un objet temporaire EmailMessage pour parser proprement les paramètres
+                temp_msg = email.message.EmailMessage()
+                temp_msg['Content-Disposition'] = content_disposition
+
+                # Extraction des éléments
+                filename = temp_msg.get_filename() or None
+                params = temp_msg['Content-Disposition'].params
+                size = params.get('size')
+                creation_date_raw = params.get('creation-date')
+
+                # Traitement de la date de création
+                if creation_date_raw:
+                    dt = email.utils.parsedate_to_datetime(creation_date_raw)
+                else:
+                    # Repli si la date de création n'est pas spécifiée dans l'en-tête
+                    dt = datetime.now()
+                date_prefix = dt.strftime('%Y%m%d%H%M%S')
+
+                logging.debug(f"Attachment {filename} - Content-Disposition: {content_disposition}, {size} bytes, "
+                              f"{creation_date_raw}")
+
+                if not attachment_dir:
+                    logging.error(f"Attachment-dir n'est pas spécifié, donc pas de sauvegarde de la pièce jointe")
+                    continue
+
+                # création du nouveau nom de fichier
                 if not filename:
                     # Try to extract from content-type
                     match = re.search(r'name="?([^";]+)"?', content_type)
@@ -380,25 +411,42 @@ def _get_attachments(email_msg) -> List[Dict[str, str]]:
                         filename = match.group(1)
                 
                 if filename:
+                    new_filename = f"{date_prefix}_{filename}"
+                    # Use get_payload(decode=True) for binary data
                     payload = part.get_payload(decode=True)
-                    size = len(payload) if payload else 0
+                    if not payload:
+                        continue
+                    if not size:  # si 'size' n'est pas spécifié, on prend la taille du payload
+                        size = len(payload)
+                    if int(size) != len(payload):  # si 'size' est spécifié, on compare avec la taille réelle (juste info)
+                        logging.error(f"Size in header ({size}) differs from payload size ({len(payload)})")
+
+                    save_path = os.path.join(attachment_dir, new_filename)
+                    try:
+                        with open(save_path, 'wb') as f:
+                            f.write(payload)
+                        logging.info(f"Saved attachment to {save_path}")
+                    except Exception as e:
+                        logging.error(f"Failed to save attachment {new_filename} to {save_path}: {e}")
+
                     attachments.append({
-                        "nom": filename,
-                        "type": content_type,
-                        "taille": size
+                        "nom": new_filename,
+                        "type": content_type.split(';')[0].strip(),
+                        "taille": size,
+                        "creation-date": creation_date_raw
                     })
-                    logging.debug(f"Found attachment: {filename} ({content_type}, {size} bytes)")
-    
+
     return attachments
 
 
-def parse_email_file(filepath: str) -> Optional[Dict[str, Any]]:
+def parse_email_file(filepath: str, attachment_dir: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """
     Parse an .eml email file and extract all relevant information.
-    
+
     Args:
         filepath: Path to the .eml file.
-        
+        attachment_dir: Optional directory to save attachments.
+
     Returns:
         Dict with parsed email data following the specified structure,
         or None if parsing fails (with error logged).
@@ -502,7 +550,7 @@ def parse_email_file(filepath: str) -> Optional[Dict[str, Any]]:
         contenu_nettoye = _clean_body(body)
         
         # Get attachments
-        pieces_jointes = _get_attachments(msg)
+        pieces_jointes = _get_attachments(msg, attachment_dir=attachment_dir)
         
         # Check for forwarded message
         forwarded_message = _extract_forwarded_message(msg)
@@ -740,7 +788,13 @@ def main():
         default='update_conversations.log',
         help='Path to the log file (default: update_conversations.log)'
     )
-    
+    parser.add_argument(
+        '--attachment-dir',
+        type=str,
+        required=True,
+        help='Directory to save email attachments'
+    )
+
     args = parser.parse_args()
     
     # Setup logging
@@ -782,7 +836,7 @@ def main():
     for filepath in sorted(input_files):
         try:
             # Parse email
-            message = parse_email_file(filepath)
+            message = parse_email_file(filepath, attachment_dir=args.attachment_dir)
             if message is None:
                 errors += 1
                 continue

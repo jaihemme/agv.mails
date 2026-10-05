@@ -1,10 +1,63 @@
 {
   "meta": {
-    "date_derniere_mise_a_jour": "2026-10-02T14:29:28.326384",
-    "nombre_conversations": 2,
-    "nombre_messages": 2
+    "date_derniere_mise_a_jour": "2026-10-05T14:20:53.291820",
+    "nombre_conversations": 3,
+    "nombre_messages": 3
   },
   "conversations": [
+    {
+      "sujet": "\"Nierlet 8\" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking",
+      "sujet_normalise": "\"Nierlet 8\" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking",
+      "date_debut": "2025-08-19T08:39:49",
+      "date_fin": "2025-08-19T08:39:49",
+      "nombre_messages": 1,
+      "messages": [
+        {
+          "fichier_source": "/Users/yogi/Docker/agv.mails/PPE/\"Nierlet 8\" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking.eml",
+          "timestamp": "2025-08-19T08:39:49",
+          "message_id": "ZRAP278MB03518BB342A839EEF5285305B830A@ZRAP278MB0351.CHEP278.PROD.OUTLOOK.COM",
+          "in_reply_to": "",
+          "expediteur_nom": "Antony Gellura",
+          "expediteur_email": "antony@gellura.ch",
+          "destinataires": {
+            "to": [
+              {
+                "nom": "Christian Alves",
+                "email": "christian.alves@alves-etancheite.ch"
+              }
+            ],
+            "cc": [
+              {
+                "nom": "Rachel Mühlbauer",
+                "email": "r.muehlbauer@gerances-giroud.ch"
+              },
+              {
+                "nom": "Marie-Christine Marfurt",
+                "email": "mariechristine.marfurt@gmail.com"
+              }
+            ],
+            "bcc": []
+          },
+          "sujet": "\"Nierlet 8\" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking",
+          "contenu_nettoye": "Salut Christian,\n\nSelon téléphone de hier soir, voici les photos de la petite infiltration d'eau dans le parking.\nComme discuté, peux-tu t'organiser pour effectuer une injection ponctuelle afin de remédier au problème.\n\nTu peux accéder au parking avec le potelet extérieur au début de la rampe parking. Le code est 1740clé.\n\nMerci de me confirmer dès que c'est fait.\n\nBonne journée\n\nAvec mes meilleures salutations\n[cid:image001.png@01DC10E4.A0DB0B50]",
+          "pieces_jointes": [
+            {
+              "nom": "20250819063722_neyruz parking.jpg",
+              "type": "image/jpeg",
+              "taille": "21438",
+              "creation-date": "Tue, 19 Aug 2025 06:37:22 GMT"
+            },
+            {
+              "nom": "20250819063725_neyruz park.jpg",
+              "type": "image/jpeg",
+              "taille": "19538",
+              "creation-date": "Tue, 19 Aug 2025 06:37:25 GMT"
+            }
+          ],
+          "forwarded_message": null
+        }
+      ]
+    },
     {
       "sujet": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
       "sujet_normalise": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
@@ -43,7 +96,7 @@
             "bcc": []
           },
           "sujet": "4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie",
-          "contenu_nettoye": "Bonjour Monsieur Cipolla,\nNous vous remercions pour votre e-mail.\nUn premier rappel a �t� adress� � CMA le 14.07.2026. En l'absence de retour, un deuxi�me rappel leur a �t� envoy� ce jour afin qu'ils traitent notre demande de devis dans les meilleurs d�lais.\nNous reviendrons vers vous d�s r�ception de celui-ci.\nDans l'intervalle, nous restons volontiers � votre disposition pour toute question.\nAvec nos meilleures salutations.\n\n[cid:f41cc2a5-9f1d-437a-ba30-d82287ee4f64]<https://www.gerances-giroud.ch/fr/accueil>\n\nMargaux Juvet\nAssistante admin. technique PPE\nChamp-Francey 14\n\nCase Postale 2143\n1630 Bulle\n026 420 01 83\n\nPr�sente du lundi au vendredi midi",
+          "contenu_nettoye": "Bonjour Monsieur Cipolla,\nNous vous remercions pour votre e-mail.\nUn premier rappel a été adressé à CMA le 14.07.2026. En l'absence de retour, un deuxième rappel leur a été envoyé ce jour afin qu'ils traitent notre demande de devis dans les meilleurs délais.\nNous reviendrons vers vous dès réception de celui-ci.\nDans l'intervalle, nous restons volontiers à votre disposition pour toute question.\nAvec nos meilleures salutations.\n\n[cid:f41cc2a5-9f1d-437a-ba30-d82287ee4f64]<https://www.gerances-giroud.ch/fr/accueil>\n\nMargaux Juvet\nAssistante admin. technique PPE\nChamp-Francey 14\n\nCase Postale 2143\n1630 Bulle\n026 420 01 83\n\nPrésente du lundi au vendredi midi",
           "pieces_jointes": [],
           "forwarded_message": null
         }

@@ -1,71 +1,112 @@
-2026-10-02 14:29:28 - INFO - Starting processing with args: Namespace(input='PPE', json_file='ppe.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 14:29:28 - INFO - Creating new JSON structure for: ppe.json
-2026-10-02 14:29:28 - INFO - Found 2 .eml files to process
-2026-10-02 14:29:28 - INFO - Parsing file: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
-2026-10-02 14:29:28 - INFO - Successfully parsed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
-2026-10-02 14:29:28 - INFO - Created new conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
-2026-10-02 14:29:28 - INFO - Added message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM to conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
-2026-10-02 14:29:28 - INFO - Processed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml -> Message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM added successfully
-2026-10-02 14:29:28 - INFO - Parsing file: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
-2026-10-02 14:29:28 - INFO - Successfully parsed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
-2026-10-02 14:29:28 - INFO - Created new conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
-2026-10-02 14:29:28 - INFO - Added message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com to conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
-2026-10-02 14:29:28 - INFO - Processed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com added successfully
-2026-10-02 14:29:28 - INFO - Saved JSON to: ppe.json
-2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
-2026-10-02 15:10:57 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/does_not_exist
-2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
-2026-10-02 15:10:57 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
-2026-10-02 15:10:57 - INFO - Found 0 .eml files to process
-2026-10-02 15:10:57 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_with_invalid_input0/out.json
-2026-10-02 15:10:57 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:10:57 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/out.json
-2026-10-02 15:10:57 - INFO - Found 1 .eml files to process
-2026-10-02 15:10:57 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml
-2026-10-02 15:10:57 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml
-2026-10-02 15:10:57 - INFO - Created new conversation: T
-2026-10-02 15:10:57 - INFO - Added message id@test.com to conversation: T
-2026-10-02 15:10:57 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-3/test_main_save_error0/test.eml -> Message id@test.com added successfully
-2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
-2026-10-02 15:11:39 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/does_not_exist
-2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
-2026-10-02 15:11:39 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
-2026-10-02 15:11:39 - INFO - Found 0 .eml files to process
-2026-10-02 15:11:39 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_with_invalid_input0/out.json
-2026-10-02 15:11:39 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:11:39 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/out.json
-2026-10-02 15:11:39 - INFO - Found 1 .eml files to process
-2026-10-02 15:11:39 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml
-2026-10-02 15:11:39 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml
-2026-10-02 15:11:39 - INFO - Created new conversation: T
-2026-10-02 15:11:39 - INFO - Added message id@test.com to conversation: T
-2026-10-02 15:11:39 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-4/test_main_save_error0/test.eml -> Message id@test.com added successfully
-2026-10-02 15:11:57 - INFO - Starting processing with args: Namespace(input='PPE', json_file='ppe.json', output=None, dry_run=True, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:11:57 - INFO - Loaded existing JSON: ppe.json
-2026-10-02 15:11:57 - INFO - Found 2 .eml files to process
-2026-10-02 15:11:57 - INFO - Parsing file: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
-2026-10-02 15:11:57 - INFO - Successfully parsed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
-2026-10-02 15:11:57 - INFO - Skipped: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml -> Message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM already exists, skipped
-2026-10-02 15:11:57 - INFO - Parsing file: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
-2026-10-02 15:11:57 - INFO - Successfully parsed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
-2026-10-02 15:11:57 - INFO - Skipped: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com already exists, skipped
-2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/does_not_exist', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
-2026-10-02 15:25:43 - ERROR - Input path does not exist: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/does_not_exist
-2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/test.txt', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
-2026-10-02 15:25:43 - WARNING - Input file /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/test.txt is not a .eml file, skipping
-2026-10-02 15:25:43 - INFO - Found 0 .eml files to process
-2026-10-02 15:25:43 - INFO - Saved JSON to: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_with_invalid_input0/out.json
-2026-10-02 15:25:43 - INFO - Starting processing with args: Namespace(input='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml', json_file='/private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/out.json', output=None, dry_run=False, log_level='info', log_file='update_conversations.log')
-2026-10-02 15:25:43 - INFO - Creating new JSON structure for: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/out.json
-2026-10-02 15:25:43 - INFO - Found 1 .eml files to process
-2026-10-02 15:25:43 - INFO - Parsing file: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml
-2026-10-02 15:25:43 - INFO - Successfully parsed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml
-2026-10-02 15:25:43 - INFO - Created new conversation: T
-2026-10-02 15:25:43 - INFO - Added message id@test.com to conversation: T
-2026-10-02 15:25:43 - INFO - Processed: /private/var/folders/hc/fmd7pjr91nv9wpl5fbszq6q40000gn/T/pytest-of-yogi/pytest-5/test_main_save_error0/test.eml -> Message id@test.com added successfully
+2026-10-05 14:20:53 - INFO - Starting processing with args: Namespace(input='PPE', json_file='ppe.json', output=None, dry_run=False, log_level='debug', log_file='update_conversations.log', attachment_dir='ppe-att')
+2026-10-05 14:20:53 - INFO - Creating new JSON structure for: ppe.json
+2026-10-05 14:20:53 - INFO - Found 3 .eml files to process
+2026-10-05 14:20:53 - INFO - Parsing file: PPE/"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking.eml
+2026-10-05 14:20:53 - DEBUG - Analyse de la structure des mime types:
+2026-10-05 14:20:53 - DEBUG -     multipart/mixed
+2026-10-05 14:20:53 - DEBUG -         multipart/related
+2026-10-05 14:20:53 - DEBUG -             multipart/alternative
+2026-10-05 14:20:53 - DEBUG -                 text/plain
+2026-10-05 14:20:53 - DEBUG -                 text/html
+2026-10-05 14:20:53 - DEBUG -             image/png
+2026-10-05 14:20:53 - DEBUG -         image/jpeg
+2026-10-05 14:20:53 - DEBUG -         image/jpeg
+2026-10-05 14:20:53 - DEBUG - Extracted headers from PPE/"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking.eml
+2026-10-05 14:20:53 - DEBUG -   Message-ID: <ZRAP278MB03518BB342A839EEF5285305B830A@ZRAP278MB0351.CHEP278.PROD.OUTLOOK.COM>
+2026-10-05 14:20:53 - DEBUG -   In-Reply-To: 
+2026-10-05 14:20:53 - DEBUG -   Subject: "Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking
+2026-10-05 14:20:53 - DEBUG -   From: Antony Gellura <antony@gellura.ch>
+2026-10-05 14:20:53 - DEBUG -   To: 1 recipients
+2026-10-05 14:20:53 - DEBUG -   Cc: 2 recipients
+2026-10-05 14:20:53 - DEBUG -   Bcc: 0 recipients
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking'
+2026-10-05 14:20:53 - DEBUG - Cleaned body: Salut Christian,
+
+Selon téléphone de hier soir, voici les photos de la petite infiltration d'eau dans le parking.
+Comme discuté, peux-tu t'organiser pour effectuer une injection ponctuelle afin de remédier au problème.
+
+Tu peux accéder au parking avec le potelet extérieur au début de la rampe parking. Le code est 1740clé.
+
+Merci de me confirmer dès que c'est fait.
+
+Bonne journée
+
+Avec mes meilleures salutations
+[cid:image001.png@01DC10E4.A0DB0B50]
+2026-10-05 14:20:53 - DEBUG - Attachment neyruz parking.jpg - Content-Disposition: attachment; filename="neyruz parking.jpg"; size="21438"; creation-date="Tue, 19 Aug 2025 06:37:22 GMT"; modification-date="Tue, 19 Aug 2025 06:39:48 GMT", 21438 bytes, Tue, 19 Aug 2025 06:37:22 GMT
+2026-10-05 14:20:53 - INFO - Saved attachment to ppe-att/20250819063722_neyruz parking.jpg
+2026-10-05 14:20:53 - DEBUG - Attachment neyruz park.jpg - Content-Disposition: attachment; filename="neyruz park.jpg"; size="19538"; creation-date="Tue, 19 Aug 2025 06:37:25 GMT"; modification-date="Tue, 19 Aug 2025 06:39:49 GMT", 19538 bytes, Tue, 19 Aug 2025 06:37:25 GMT
+2026-10-05 14:20:53 - INFO - Saved attachment to ppe-att/20250819063725_neyruz park.jpg
+2026-10-05 14:20:53 - INFO - Successfully parsed: PPE/"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking.eml
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking'
+2026-10-05 14:20:53 - INFO - Created new conversation: "Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking
+2026-10-05 14:20:53 - INFO - Added message ZRAP278MB03518BB342A839EEF5285305B830A@ZRAP278MB0351.CHEP278.PROD.OUTLOOK.COM to conversation: "Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking
+2026-10-05 14:20:53 - INFO - Processed: PPE/"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking.eml -> Message ZRAP278MB03518BB342A839EEF5285305B830A@ZRAP278MB0351.CHEP278.PROD.OUTLOOK.COM added successfully
+2026-10-05 14:20:53 - INFO - Parsing file: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-05 14:20:53 - DEBUG - Analyse de la structure des mime types:
+2026-10-05 14:20:53 - DEBUG -     multipart/related
+2026-10-05 14:20:53 - DEBUG -         multipart/alternative
+2026-10-05 14:20:53 - DEBUG -             text/plain
+2026-10-05 14:20:53 - DEBUG -             text/html
+2026-10-05 14:20:53 - DEBUG -         image/png
+2026-10-05 14:20:53 - DEBUG -         image/png
+2026-10-05 14:20:53 - DEBUG -         image/png
+2026-10-05 14:20:53 - DEBUG -         image/png
+2026-10-05 14:20:53 - DEBUG -         image/png
+2026-10-05 14:20:53 - DEBUG - Extracted headers from PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-05 14:20:53 - DEBUG -   Message-ID: <GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM>
+2026-10-05 14:20:53 - DEBUG -   In-Reply-To: <11b67a45-8b67-49c9-93e2-115ef06368b3@ik.me>
+2026-10-05 14:20:53 - DEBUG -   Subject: RE: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
+2026-10-05 14:20:53 - DEBUG -   From: Margaux Juvet <m.juvet@gerances-giroud.ch>
+2026-10-05 14:20:53 - DEBUG -   To: 2 recipients
+2026-10-05 14:20:53 - DEBUG -   Cc: 2 recipients
+2026-10-05 14:20:53 - DEBUG -   Bcc: 0 recipients
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie'
+2026-10-05 14:20:53 - DEBUG - Cleaned body: Bonjour Monsieur Cipolla,
+Nous vous remercions pour votre e-mail.
+Un premier rappel a été adressé à CMA le 14.07.2026. En l'absence de retour, un deuxième rappel leur a été envoyé ce jour afin qu'ils traitent notre demande de devis dans les meilleurs délais.
+Nous reviendrons vers vous dès réception de celui-ci.
+Dans l'intervalle, nous restons volontiers à votre disposition pour toute question.
+Avec nos meilleures salutations.
+
+[cid:f41cc2a5-9f1d-437a-ba30-d82287ee4f64]<https://www.gerances-giroud.ch/fr/accueil>
+
+Margaux Juvet
+Assistante admin. technique PPE
+Champ-Francey 14
+
+Case Postale 2143
+1630 Bulle
+026 420 01 83
+
+Présente du lundi au vendredi midi
+2026-10-05 14:20:53 - INFO - Successfully parsed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie'
+2026-10-05 14:20:53 - INFO - Created new conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
+2026-10-05 14:20:53 - INFO - Added message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM to conversation: 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie
+2026-10-05 14:20:53 - INFO - Processed: PPE/RE_ 4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie.eml -> Message GVAP278MB0423374016502B8698D01229C1C32@GVAP278MB0423.CHEP278.PROD.OUTLOOK.COM added successfully
+2026-10-05 14:20:53 - INFO - Parsing file: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-05 14:20:53 - DEBUG - Analyse de la structure des mime types:
+2026-10-05 14:20:53 - DEBUG -     text/plain
+2026-10-05 14:20:53 - DEBUG - Extracted headers from PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-05 14:20:53 - DEBUG -   Message-ID: <DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com>
+2026-10-05 14:20:53 - DEBUG -   In-Reply-To: 
+2026-10-05 14:20:53 - DEBUG -   Subject: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel 
+2026-10-05 14:20:53 - DEBUG -   From: Marika Iacono <m.iacono@toffel-immobilier.ch>
+2026-10-05 14:20:53 - DEBUG -   To: 0 recipients
+2026-10-05 14:20:53 - DEBUG -   Cc: 0 recipients
+2026-10-05 14:20:53 - DEBUG -   Bcc: 0 recipients
+2026-10-05 14:20:53 - DEBUG - Normalized subject: 'Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel'
+2026-10-05 14:20:53 - DEBUG - Cleaned body: Marika Iacono souhaite rappeler le message « PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel  ».
+2026-10-05 14:20:53 - INFO - Successfully parsed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml
+2026-10-05 14:20:53 - DEBUG - Normalized subject: 'Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '"Nierlet 8" à Neyruz - JT Partners Immobilier SA - injection ponctuelle parking'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: '4287 Rte de Nierlet 8 - Neyruz_Garage Grille pare-pluie'
+2026-10-05 14:20:53 - DEBUG - Normalized subject: 'Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel'
+2026-10-05 14:20:53 - INFO - Created new conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
+2026-10-05 14:20:53 - INFO - Added message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com to conversation: Rappel : PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 / Toffel
+2026-10-05 14:20:53 - INFO - Processed: PPE/Rappel _ PPE Nierlet 8 à Neyruz - installation d'un pergola - attique - lot n°11 _ Toffel.eml -> Message DU0PR08MB93931A960C7BAF45A4579C64B9DFA@DU0PR08MB9393.eurprd08.prod.outlook.com added successfully
+2026-10-05 14:20:53 - INFO - Saved JSON to: ppe.json
