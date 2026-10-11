@@ -88,25 +88,36 @@ def generate_report(conversation, rapports_dir, attachment_dir):
     lines.append(f"## Messages ({len(msgs)})")
 
     # Table Header
-    lines.append("| Timestamp | Sujet | Expéditeur | Destinataires |")
-    lines.append("| :--- | :--- | :--- | :--- |")
+    lines.append("| Date d'envoi | Sujet et Participants |")
+    lines.append("| :--- | :--- |")
 
     for m in msgs:
         ts = m.get('timestamp', 'N/A')
         sujet = m.get('sujet', 'Sans sujet')
         source = m.get('fichier_source', '')
-        exp = m.get('expediteur_email', 'Inconnu')
 
-        # Flatten recipients
+        # Expéditeur
+        exp_nom = m.get('expediteur_nom', '')
+        exp_email = m.get('expediteur_email', 'Inconnu')
+        exp_full = f"{exp_nom} <{exp_email}>" if exp_nom else exp_email
+
+        # Destinataires (to et cc uniquement)
         dests = m.get('destinataires', {})
-        all_recipients = []
-        for key in ['to', 'cc', 'bcc']:
+        recipients_list = []
+        for key in ['to', 'cc']:
             for r in dests.get(key, []):
-                all_recipients.append(r.get('email', ''))
-        dest_str = ", ".join(filter(None, all_recipients))
+                name = r.get('nom', '')
+                email = r.get('email', '')
+                recipients_list.append(f"{name} <{email}>" if name else email)
+        dest_str = ", ".join(filter(None, recipients_list))
 
-        source_link = f"[{Path(source).name}]({source})" if source else "N/A"
-        lines.append(f"| {ts} | {sujet} ({source_link}) | {exp} | {dest_str} |")
+        source_link = f"[{sujet}]({source})" if source else sujet
+
+        # Construction de la cellule Sujet (Sujet lien <br> Expéditeur -> Destinataires)
+        participants = f"{exp_full} → {dest_str}" if dest_str else exp_full
+        subject_cell = f"{source_link}<br>{participants}"
+
+        lines.append(f"| {ts} | {subject_cell} |")
 
     lines.append("")
 

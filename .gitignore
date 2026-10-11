@@ -1,5 +1,7 @@
 # Project specific
 PPE/
+ppe-att
+ppe-rapports
 
 # Python standard ignores
 # Byte-compiled / optimized / DLL files
@@ -78,3 +80,4 @@ ipython_config.py
 # macOS & IDE
 .DS_Store
 .idea/
+/ppe-att/

@@ -1,0 +1,44 @@
+export PATH=/opt/homebrew/bin/:/Users/yogi/Docker/agv.mails/venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+source venv/bin/activate
+
+yogi@macbook-yogi:/Users/yogi/Docker/agv.mails(venv) (11-0)$ l /usr/local/bin/ollama ~/Applications/Ollama.app/Contents/Resources/ollama
+-rwxr-xr-x@ 1 yogi  staff  52076880 11 oct.  14:29 /Users/yogi/Applications/Ollama.app/Contents/Resources/ollama
+lrwxr-xr-x@ 1 root  wheel        61  7 oct.  06:26 /usr/local/bin/ollama -> /Users/yogi/Applications/Ollama.app/Contents/Resources/ollama
+
+ollama launch claude
+
+rm -r ppe-att/ ppe-rapports/ ppe.json update_conversations.log
+
+python update_conversations.py --input PPE --json_file ppe.json --attachment-dir ppe-att
+
+python generate_reports.py --input ppe.json --attachment-dir ppe-att --rapports-dir ppe-rapports
+
+/Users/yogi/Docker/agv.mails/venv/bin/python /Users/yogi/Docker/agv.mails/update_conversations.py --input PPE --json_file ppe.json --attachment-dir ppe-att
+
+# transcription avec openai
+python transcribe.py WhatsApp\ Chat\ -\ Marfurt/00000009-AUDIO-2025-01-09-14-45-27.opus
+
+# liste des messages qui sont des réponses à d'autres messages
+jq -c '
+  . as $data |
+  ($data.conversations | map(.messages[].message_id) | unique) as $all_ids |
+  $data.conversations[] | .messages[] | {
+    sujet: .sujet,
+    message_id: .message_id,
+    in_reply_to: .in_reply_to,
+    existe_parent: (if .in_reply_to then (.in_reply_to | IN($all_ids[])) else false end)
+  }
+' ppe.json
+
+# enregistrer un variable avec mot de passe dans le trousseau
+security add-generic-password \
+  -a "$USER" \
+  -s "OPENAI_API_KEY" \
+  -w
+
+# récuperer
+export OPENAI_API_KEY="$(security find-generic-password \
+  -a "$USER" \
+  -s "OPENAI_API_KEY" \
+  -w)"
+
