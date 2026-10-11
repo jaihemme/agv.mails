@@ -1,7 +1,7 @@
 # Project specific
 PPE/
-ppe-att
-ppe-rapports
+ppe-att/
+ppe-rapports/
 
 # Python standard ignores
 # Byte-compiled / optimized / DLL files
